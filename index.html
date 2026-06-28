@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decision Helper — Stop Overthinking. Decide Together.</title>
+  <meta name="description" content="Post any decision, get real votes and honest opinions from a community, and decide faster with confidence. Free on Android." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress-container">
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+</div>
+
+<!-- Background Video Container -->
+<div class="video-bg-container">
+  <video autoplay loop muted playsinline poster="watermarked_img_7501384274334721900.png">
+    <source src="assets/paths_of_choice_ambient.mp4" type="video/mp4">
+    <!-- Fallback static image if video isn't supported -->
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+<!-- Animated background blobs -->
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+<!-- Floating particles -->
+<div class="particles" id="particles"></div>
+
+<!-- ── NAVBAR ── -->
+<header class="header" id="header">
+  <div class="header-container">
+    <a href="#" class="logo-wrapper">
+      <img src="app_logo.png" alt="Decision Helper logo" class="logo-img" />
+      <span class="logo-text">Decision Helper</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#features"  class="nav-link">Features</a>
+      <a href="#howitworks" class="nav-link">How it works</a>
+      <a href="#benefits"  class="nav-link">Benefits</a>
+      <a href="#downloads" class="nav-link btn-cta">Download App</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <div class="hero-container">
+
+    <div class="hero-content">
+      <div class="badge animate-pop">
+        <span class="badge-dot"></span> Now live — Download free
+      </div>
+      <h1 class="hero-title">
+        <span class="line-reveal">Stop Overthinking.</span>
+        <span class="line-reveal delay-1"><span class="gradient-text">Decide Together.</span></span>
+      </h1>
+      <p class="hero-description animate-fade-up delay-2">
+        Tired of endless group chat debates? Post your dilemma, weigh pros &amp; cons,
+        invite friends to vote, and let real community consensus guide you to the perfect choice.
+      </p>
+      <div class="hero-actions animate-fade-up delay-3">
+        <a href="#downloads" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 15L12 3M12 15L8 11M12 15L16 11M3 17V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Get Android APK
+        </a>
+        <a href="#features" class="btn btn-secondary">See Features</a>
+      </div>
+      <div class="quick-stats animate-fade-up delay-4">
+        <div class="stat-item">
+          <span class="stat-number" data-target="3" data-suffix="x">0x</span>
+          <span class="stat-label">Faster choices</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100" data-suffix="%">0%</span>
+          <span class="stat-label">Anonymous mode</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">Free</span>
+          <span class="stat-label">Always &amp; forever</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating mockup card -->
+    <div class="hero-visual">
+      <div class="mockup-card float-card">
+        <div class="mockup-header">
+          <div class="mockup-creator">
+            <div class="avatar">R</div>
+            <div>
+              <h4 class="creator-name">Rahul Kumar</h4>
+              <span class="post-time">2 mins ago</span>
+            </div>
+          </div>
+          <div class="mockup-badge">Lifestyle</div>
+        </div>
+        <h3 class="mockup-question">Which should I try first: coffee or tea?</h3>
+        <p class="mockup-desc">Help me break this dilemma! Morning energy boost vs afternoon calm.</p>
+        <div class="mockup-options">
+          <div class="mockup-option winning" data-percent="70">
+            <div class="option-details">
+              <span class="option-name">☕ Coffee</span>
+              <span class="option-votes">70% · 42 votes</span>
+            </div>
+            <div class="progress-bar"></div>
+          </div>
+          <div class="mockup-option" data-percent="30">
+            <div class="option-details">
+              <span class="option-name">🍵 Tea</span>
+              <span class="option-votes">30% · 18 votes</span>
+            </div>
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+        <div class="mockup-footer">
+          <span class="votes-total">📊 60 Votes</span>
+          <span class="consensus-badge high">🔥 High Consensus</span>
+        </div>
+      </div>
+      <!-- Glow ring behind card -->
+      <div class="card-glow-ring"></div>
+    </div>
+
+    <div class="scroll-down-container">
+      <a href="#features" class="scroll-btn">
+        <span class="mouse"><span class="wheel"></span></span>
+        <span class="scroll-label">SCROLL DOWN</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section id="features" class="features">
+  <div class="section-header">
+    <p class="section-eyebrow reveal-up">Core features</p>
+    <h2 class="section-title reveal-up delay-1">Packed with <span class="gradient-text">Premium Features</span></h2>
+    <p class="section-subtitle reveal-up delay-2">Designed to help you make decisions quickly, cleanly, and democratically.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal-up" style="--delay:0s">
+      <div class="feature-icon-wrap">👉</div>
+      <h3 class="feature-title">One-Tap Quick Vote</h3>
+      <p class="feature-desc">Cast votes directly from the home feed with a single tap. Scroll and vote in milliseconds.</p>
+      <div class="feature-shine"></div>
+    </div>
+    <div class="feature-card reveal-up" style="--delay:0.1s">
+      <div class="feature-icon-wrap">🔥</div>
+      <h3 class="feature-title">Tinder-style Swipe</h3>
+      <p class="feature-desc">Two options? Swipe left for A or right for B. Smooth, responsive gesture mechanics.</p>
+      <div class="feature-shine"></div>
+    </div>
+    <div class="feature-card reveal-up" style="--delay:0.2s">
+      <div class="feature-icon-wrap">📊</div>
+      <h3 class="feature-title">Consensus Badges</h3>
+      <p class="feature-desc">Smart algorithm shows instant "High", "Moderate", or "Split" consensus indicators.</p>
+      <div class="feature-shine"></div>
+    </div>
+    <div class="feature-card reveal-up" style="--delay:0.3s">
+      <div class="feature-icon-wrap">⏱</div>
+      <h3 class="feature-title">Live Ticking Timers</h3>
+      <p class="feature-desc">Real-time countdown on cards that auto-close when the timer hits zero. No missed deadlines.</p>
+      <div class="feature-shine"></div>
+    </div>
+    <div class="feature-card reveal-up" style="--delay:0.4s">
+      <div class="feature-icon-wrap">⚖️</div>
+      <h3 class="feature-title">Pros &amp; Cons Weighing</h3>
+      <p class="feature-desc">Add arguments for and against each option. Build collaborative reasoning with the community.</p>
+      <div class="feature-shine"></div>
+    </div>
+    <div class="feature-card reveal-up" style="--delay:0.5s">
+      <div class="feature-icon-wrap">🕵️</div>
+      <h3 class="feature-title">Anonymous Mode</h3>
+      <p class="feature-desc">Sensitive decisions? Enable anonymous voting — people share real opinions without pressure.</p>
+      <div class="feature-shine"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="howitworks" class="howitworks">
+  <div class="section-header">
+    <p class="section-eyebrow reveal-up">Simple process</p>
+    <h2 class="section-title reveal-up delay-1">From question to <span class="gradient-text">clarity in 3 steps</span></h2>
+  </div>
+  <div class="steps-row">
+    <div class="step-card reveal-up" style="--delay:0s">
+      <div class="step-number">01</div>
+      <div class="step-icon">📝</div>
+      <h3 class="step-title">Post your decision</h3>
+      <p class="step-desc">Type your question, add 2–6 options, pick a category like Career or Tech. Done in 60 seconds.</p>
+      <div class="step-connector"></div>
+    </div>
+    <div class="step-card reveal-up" style="--delay:0.15s">
+      <div class="step-number">02</div>
+      <div class="step-icon">🗳️</div>
+      <h3 class="step-title">Get real votes &amp; opinions</h3>
+      <p class="step-desc">The community votes on your options and leaves comments. Watch percentages update live.</p>
+      <div class="step-connector"></div>
+    </div>
+    <div class="step-card reveal-up" style="--delay:0.3s">
+      <div class="step-number">03</div>
+      <div class="step-icon">🏆</div>
+      <h3 class="step-title">Decide with confidence</h3>
+      <p class="step-desc">See the winner, consensus strength, and best advice. Log your choice and track outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── BENEFITS ── -->
+<section id="benefits" class="benefits">
+  <div class="benefits-container">
+    <div class="benefits-visual reveal-left">
+      <div class="glass-list">
+        <div class="glass-item">
+          <span class="glass-num">01</span>
+          <div>
+            <h4>Auto-Created Sample Decisions</h4>
+            <p>See the voting engine in action immediately on signup with a sample decision.</p>
+          </div>
+        </div>
+        <div class="glass-item">
+          <span class="glass-num">02</span>
+          <div>
+            <h4>Social Image Sharing</h4>
+            <p>Export elegant decision cards to Instagram, WhatsApp, or Twitter as high-res images.</p>
+          </div>
+        </div>
+        <div class="glass-item">
+          <span class="glass-num">03</span>
+          <div>
+            <h4>Smart Offline Fallback</h4>
+            <p>Works smoothly offline. Local mode derives deterministic guest IDs to avoid overlap.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="benefits-content reveal-right">
+      <p class="section-eyebrow">Why it works</p>
+      <h2 class="benefits-title">Designed for <br /><span class="gradient-text">Instant Clarity</span></h2>
+      <p class="benefits-description">
+        Whether debating a startup roadmap or choosing a weekend destination,
+        Decision Helper strips away group discussion fatigue and gives you clarity in minutes.
+      </p>
+      <div class="benefit-point"><span class="check">✓</span><span>No more endless message threads</span></div>
+      <div class="benefit-point"><span class="check">✓</span><span>No registration required for friends to vote</span></div>
+      <div class="benefit-point"><span class="check">✓</span><span>Spring progress bar animations with winning glow</span></div>
+      <div class="benefit-point"><span class="check">✓</span><span>100% free — no hidden subscriptions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NUMBERS ── -->
+<section class="numbers-section">
+  <div class="numbers-grid">
+    <div class="number-item reveal-up" style="--delay:0s">
+      <div class="number-val gradient-text" data-target="10" data-suffix="K+">0</div>
+      <div class="number-lbl">Decisions made</div>
+    </div>
+    <div class="number-item reveal-up" style="--delay:0.1s">
+      <div class="number-val gradient-text" data-target="50" data-suffix="K+">0</div>
+      <div class="number-lbl">Votes cast</div>
+    </div>
+    <div class="number-item reveal-up" style="--delay:0.2s">
+      <div class="number-val gradient-text" data-target="4.8" data-suffix="★">0</div>
+      <div class="number-lbl">Average rating</div>
+    </div>
+    <div class="number-item reveal-up" style="--delay:0.3s">
+      <div class="number-val gradient-text">Free</div>
+      <div class="number-lbl">Always &amp; forever</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── DOWNLOADS ── -->
+<section id="downloads" class="downloads">
+  <div class="section-header">
+    <p class="section-eyebrow reveal-up">Get the app</p>
+    <h2 class="section-title reveal-up delay-1">Download <span class="gradient-text">Decision Helper</span></h2>
+    <p class="section-subtitle reveal-up delay-2">Pick the APK optimized for your device architecture.</p>
+  </div>
+  <div class="download-grid">
+    <div class="download-card featured reveal-up" style="--delay:0s">
+      <div class="download-card-glow"></div>
+      <div class="architecture-badge">ARM 64-bit</div>
+      <h3>Modern Devices</h3>
+      <p class="pkg-name">app-arm64-v8a-release.apk</p>
+      <p class="pkg-info">For all modern smartphones (Android 9+). Faster load times and lower battery usage.</p>
+      <div class="pkg-size">20.5 MB</div>
+      <a href="app-arm64-v8a-release.apk" class="btn btn-primary btn-download">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 15V3M12 15L8 11M12 15L16 11M3 17V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Download ARM64
+      </a>
+    </div>
+    <div class="download-card reveal-up" style="--delay:0.15s">
+      <div class="architecture-badge">ARM 32-bit</div>
+      <h3>Older Devices</h3>
+      <p class="pkg-name">app-armeabi-v7a-release.apk</p>
+      <p class="pkg-info">For older phones and legacy architectures. Highly optimized compatibility.</p>
+      <div class="pkg-size">18.2 MB</div>
+      <a href="app-armeabi-v7a-release.apk" class="btn btn-secondary btn-download">Download ARM32</a>
+    </div>
+    <div class="download-card reveal-up" style="--delay:0.3s">
+      <div class="architecture-badge">x86_64</div>
+      <h3>Emulators / Laptops</h3>
+      <p class="pkg-name">app-x86_64-release.apk</p>
+      <p class="pkg-info">For Android Studio emulators, Chromebooks, and virtualized Android instances.</p>
+      <div class="pkg-size">22.8 MB</div>
+      <a href="app-x86_64-release.apk" class="btn btn-secondary btn-download">Download x86_64</a>
+    </div>
+  </div>
+  <div class="download-trust reveal-up">
+    <span>✓ Free forever</span>
+    <span>✓ No account needed to vote</span>
+    <span>✓ No ads</span>
+    <span>✓ Open source</span>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <a href="#" class="logo-wrapper footer-logo">
+        <img src="app_logo.png" alt="logo" class="logo-img" style="width:28px;height:28px" />
+        <span class="logo-text" style="font-size:16px">Decision Helper</span>
+      </a>
+      <p style="font-size:13px;margin-top:8px">© 2026 Decision Helper. Built for fast decisions.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#howitworks">How it works</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#downloads">Downloads</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
