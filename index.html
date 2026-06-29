@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,326 +7,479 @@
   <meta name="description" content="Post any decision, get real votes and honest opinions from a community, and decide faster with confidence. Free on Android." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- Scroll progress bar -->
+<!-- Top Scroll Progress Bar -->
 <div class="scroll-progress-container">
   <div class="scroll-progress-bar" id="scroll-progress"></div>
 </div>
 
-<!-- Background Video Container -->
-<div class="video-bg-container">
-  <video autoplay loop muted playsinline poster="watermarked_img_7501384274334721900.png">
-    <source src="assets/paths_of_choice_ambient.mp4" type="video/mp4">
-    <!-- Fallback static image if video isn't supported -->
-  </video>
-  <div class="video-overlay"></div>
+
+
+<!-- Floating Gradient Glowing Blobs -->
+<div class="blob-wrapper">
+  <div class="blob blob-purple"></div>
+  <div class="blob blob-pink"></div>
+  <div class="blob blob-cyan"></div>
 </div>
 
-<!-- Animated background blobs -->
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
-<!-- Floating particles -->
-<div class="particles" id="particles"></div>
+<!-- Abstract Grid Pattern Backdrop -->
+<div class="grid-bg-overlay"></div>
+
+<!-- 3D Parallax Perspective Mesh Background -->
+<canvas id="bg-3d-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;"></canvas>
 
 <!-- ── NAVBAR ── -->
 <header class="header" id="header">
   <div class="header-container">
     <a href="#" class="logo-wrapper">
+      <div class="logo-glow-ring"></div>
       <img src="app_logo.png" alt="Decision Helper logo" class="logo-img" />
       <span class="logo-text">Decision Helper</span>
     </a>
     <nav class="nav" id="nav">
-      <a href="#features"  class="nav-link">Features</a>
+      <a href="#features" class="nav-link">Features</a>
       <a href="#howitworks" class="nav-link">How it works</a>
-      <a href="#benefits"  class="nav-link">Benefits</a>
-      <a href="#downloads" class="nav-link btn-cta">Download App</a>
+      <a href="#demo" class="nav-link">Interactive Demo</a>
+      <a href="#downloads" class="nav-link btn-cta">Download APK</a>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-actions">
+      <!-- Theme Switcher -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- ── HERO ── -->
+<!-- ── HERO SECTION ── -->
 <section class="hero" id="hero">
   <div class="hero-container">
-
+    
     <div class="hero-content">
       <div class="badge animate-pop">
-        <span class="badge-dot"></span> Now live — Download free
+        <span class="badge-dot"></span>
+        <span class="badge-text">Version 2.6.2 — Active Download</span>
       </div>
       <h1 class="hero-title">
-        <span class="line-reveal">Stop Overthinking.</span>
-        <span class="line-reveal delay-1"><span class="gradient-text">Decide Together.</span></span>
+        <span class="title-line"><span class="reveal-inner">Stop Overthinking.</span></span>
+        <span class="title-line"><span class="reveal-inner gradient-text">Decide Together.</span></span>
       </h1>
-      <p class="hero-description animate-fade-up delay-2">
-        Tired of endless group chat debates? Post your dilemma, weigh pros &amp; cons,
-        invite friends to vote, and let real community consensus guide you to the perfect choice.
+      <p class="hero-description animate-fade-up">
+        Tired of endless group chat debates? Post your dilemma, weigh pros &amp; cons, invite friends to vote, and let smart consensus analytics guide you to the perfect choice.
       </p>
-      <div class="hero-actions animate-fade-up delay-3">
+      
+      <div class="hero-actions animate-fade-up">
         <a href="#downloads" class="btn btn-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 15L12 3M12 15L8 11M12 15L16 11M3 17V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Get Android APK
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Get Free APK
         </a>
-        <a href="#features" class="btn btn-secondary">See Features</a>
+        <a href="#demo" class="btn btn-secondary">Try Live Demo</a>
       </div>
-      <div class="quick-stats animate-fade-up delay-4">
+
+      <div class="quick-stats animate-fade-up">
         <div class="stat-item">
           <span class="stat-number" data-target="3" data-suffix="x">0x</span>
-          <span class="stat-label">Faster choices</span>
+          <span class="stat-label">Faster Choices</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-number" data-target="100" data-suffix="%">0%</span>
-          <span class="stat-label">Anonymous mode</span>
+          <span class="stat-label">Anonymous Privacy</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-number">Free</span>
-          <span class="stat-label">Always &amp; forever</span>
+          <span class="stat-label">No Ads/Subs</span>
         </div>
       </div>
     </div>
 
-    <!-- Floating mockup card -->
-    <div class="hero-visual">
-      <div class="mockup-card float-card">
-        <div class="mockup-header">
-          <div class="mockup-creator">
-            <div class="avatar">R</div>
-            <div>
-              <h4 class="creator-name">Rahul Kumar</h4>
-              <span class="post-time">2 mins ago</span>
+    <!-- Live Interactive Mockup Card -->
+    <div class="hero-visual" id="demo">
+      <div class="mockup-container">
+        <div class="glass-card-glow"></div>
+        <div class="mockup-card float-card electric-border">
+          <div class="mockup-header">
+            <div class="mockup-creator">
+              <div class="avatar-ring">
+                <div class="avatar">R</div>
+              </div>
+              <div>
+                <h4 class="creator-name">Rahul Kumar</h4>
+                <span class="post-time">Active now</span>
+              </div>
+            </div>
+            <div class="mockup-badge">Development</div>
+          </div>
+          
+          <h3 class="mockup-question">Which tech stack fits our next SaaS project?</h3>
+          <p class="mockup-desc">Looking for maximum scaling speed, quick developer velocity, and premium component support.</p>
+          
+          <div class="mockup-options" id="interactive-poll">
+            <!-- Option A (Next.js) -->
+            <div class="mockup-option" data-option="A" data-votes="42" data-total="60">
+              <div class="option-details">
+                <span class="option-name">
+                  <svg class="opt-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12a15.3 15.3 0 0 1 10-4 15.3 15.3 0 0 1 10 4 15.3 15.3 0 0 1-10 4 15.3 15.3 0 0 1-10-4z"/></svg>
+                  Next.js + React
+                </span>
+                <span class="option-percentage">70%</span>
+              </div>
+              <div class="progress-bar"></div>
+              <div class="selection-indicator">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+            </div>
+            <!-- Option B (Flutter) -->
+            <div class="mockup-option" data-option="B" data-votes="18" data-total="60">
+              <div class="option-details">
+                <span class="option-name">
+                  <svg class="opt-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  Flutter + Dart
+                </span>
+                <span class="option-percentage">30%</span>
+              </div>
+              <div class="progress-bar"></div>
+              <div class="selection-indicator">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
             </div>
           </div>
-          <div class="mockup-badge">Lifestyle</div>
+          
+          <div class="mockup-footer">
+            <span class="votes-total" id="poll-total-votes">
+              <svg class="opt-svg-icon" style="width:13px;height:13px;margin-right:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+              60 Votes
+            </span>
+            <span class="consensus-badge high" id="poll-consensus">
+              <svg class="opt-svg-icon" style="width:13px;height:13px;margin-right:4px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              High Consensus
+            </span>
+          </div>
         </div>
-        <h3 class="mockup-question">Which should I try first: coffee or tea?</h3>
-        <p class="mockup-desc">Help me break this dilemma! Morning energy boost vs afternoon calm.</p>
-        <div class="mockup-options">
-          <div class="mockup-option winning" data-percent="70">
-            <div class="option-details">
-              <span class="option-name">☕ Coffee</span>
-              <span class="option-votes">70% · 42 votes</span>
-            </div>
-            <div class="progress-bar"></div>
-          </div>
-          <div class="mockup-option" data-percent="30">
-            <div class="option-details">
-              <span class="option-name">🍵 Tea</span>
-              <span class="option-votes">30% · 18 votes</span>
-            </div>
-            <div class="progress-bar"></div>
-          </div>
-        </div>
-        <div class="mockup-footer">
-          <span class="votes-total">📊 60 Votes</span>
-          <span class="consensus-badge high">🔥 High Consensus</span>
+        
+        <!-- Live Vote Status Overlay Toast -->
+        <div class="toast-feedback" id="vote-toast">
+          <span class="toast-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </span> 
+          Vote registered! Spring transition complete.
         </div>
       </div>
-      <!-- Glow ring behind card -->
-      <div class="card-glow-ring"></div>
     </div>
 
+    <!-- Bouncing mouse scroll indicator -->
     <div class="scroll-down-container">
       <a href="#features" class="scroll-btn">
         <span class="mouse"><span class="wheel"></span></span>
-        <span class="scroll-label">SCROLL DOWN</span>
+        <span class="scroll-label">EXPLORE FEATURES</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ── FEATURES ── -->
+<!-- ── FEATURES BENTO GRID ── -->
 <section id="features" class="features">
   <div class="section-header">
-    <p class="section-eyebrow reveal-up">Core features</p>
-    <h2 class="section-title reveal-up delay-1">Packed with <span class="gradient-text">Premium Features</span></h2>
-    <p class="section-subtitle reveal-up delay-2">Designed to help you make decisions quickly, cleanly, and democratically.</p>
+    <p class="section-eyebrow reveal-up">Exclusive Capabilities</p>
+    <h2 class="section-title reveal-up">Designed for <span class="gradient-text">Premium Experience</span></h2>
+    <p class="section-subtitle reveal-up">Ditch decision paralysis. Explore how Decision Helper streamlines choices.</p>
   </div>
-  <div class="features-grid">
-    <div class="feature-card reveal-up" style="--delay:0s">
-      <div class="feature-icon-wrap">👉</div>
-      <h3 class="feature-title">One-Tap Quick Vote</h3>
-      <p class="feature-desc">Cast votes directly from the home feed with a single tap. Scroll and vote in milliseconds.</p>
-      <div class="feature-shine"></div>
+  
+  <div class="bento-grid">
+    <!-- Bento Item 1: Swipe to Vote (Featured Large) -->
+    <div class="bento-item featured-bento reveal-up">
+      <div class="bento-glow"></div>
+      <div class="bento-content">
+        <div class="bento-icon">
+          <svg class="bento-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+        </div>
+        <h3 class="bento-title">Tinder-Style Swipe Mechanics</h3>
+        <p class="bento-desc">Got two choices? Swipe left for Option A, swipe right for Option B. Fast, satisfying gesture voting feels native and responsive.</p>
+      </div>
+      <!-- Mini Swipe Simulator Preview -->
+      <div class="swipe-simulator">
+        <div class="simulator-card left-swipe">🎨 UI Design</div>
+        <div class="simulator-card right-swipe">💻 Backend</div>
+        <div class="simulator-card main-card">Swipe to Select</div>
+      </div>
     </div>
-    <div class="feature-card reveal-up" style="--delay:0.1s">
-      <div class="feature-icon-wrap">🔥</div>
-      <h3 class="feature-title">Tinder-style Swipe</h3>
-      <p class="feature-desc">Two options? Swipe left for A or right for B. Smooth, responsive gesture mechanics.</p>
-      <div class="feature-shine"></div>
-    </div>
-    <div class="feature-card reveal-up" style="--delay:0.2s">
-      <div class="feature-icon-wrap">📊</div>
-      <h3 class="feature-title">Consensus Badges</h3>
-      <p class="feature-desc">Smart algorithm shows instant "High", "Moderate", or "Split" consensus indicators.</p>
-      <div class="feature-shine"></div>
-    </div>
-    <div class="feature-card reveal-up" style="--delay:0.3s">
-      <div class="feature-icon-wrap">⏱</div>
-      <h3 class="feature-title">Live Ticking Timers</h3>
-      <p class="feature-desc">Real-time countdown on cards that auto-close when the timer hits zero. No missed deadlines.</p>
-      <div class="feature-shine"></div>
-    </div>
-    <div class="feature-card reveal-up" style="--delay:0.4s">
-      <div class="feature-icon-wrap">⚖️</div>
-      <h3 class="feature-title">Pros &amp; Cons Weighing</h3>
-      <p class="feature-desc">Add arguments for and against each option. Build collaborative reasoning with the community.</p>
-      <div class="feature-shine"></div>
-    </div>
-    <div class="feature-card reveal-up" style="--delay:0.5s">
-      <div class="feature-icon-wrap">🕵️</div>
-      <h3 class="feature-title">Anonymous Mode</h3>
-      <p class="feature-desc">Sensitive decisions? Enable anonymous voting — people share real opinions without pressure.</p>
-      <div class="feature-shine"></div>
-    </div>
-  </div>
-</section>
 
-<!-- ── HOW IT WORKS ── -->
-<section id="howitworks" class="howitworks">
-  <div class="section-header">
-    <p class="section-eyebrow reveal-up">Simple process</p>
-    <h2 class="section-title reveal-up delay-1">From question to <span class="gradient-text">clarity in 3 steps</span></h2>
-  </div>
-  <div class="steps-row">
-    <div class="step-card reveal-up" style="--delay:0s">
-      <div class="step-number">01</div>
-      <div class="step-icon">📝</div>
-      <h3 class="step-title">Post your decision</h3>
-      <p class="step-desc">Type your question, add 2–6 options, pick a category like Career or Tech. Done in 60 seconds.</p>
-      <div class="step-connector"></div>
+    <!-- Bento Item 2: One-Tap Voting -->
+    <div class="bento-item reveal-up" style="--delay: 0.1s">
+      <div class="bento-glow"></div>
+      <div class="bento-content">
+        <div class="bento-icon">
+          <svg class="bento-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="bento-title">One-Tap Feed Action</h3>
+        <p class="bento-desc">Cast your votes directly from cards on your home feed. No need to tap into detail screens.</p>
+      </div>
     </div>
-    <div class="step-card reveal-up" style="--delay:0.15s">
-      <div class="step-number">02</div>
-      <div class="step-icon">🗳️</div>
-      <h3 class="step-title">Get real votes &amp; opinions</h3>
-      <p class="step-desc">The community votes on your options and leaves comments. Watch percentages update live.</p>
-      <div class="step-connector"></div>
-    </div>
-    <div class="step-card reveal-up" style="--delay:0.3s">
-      <div class="step-number">03</div>
-      <div class="step-icon">🏆</div>
-      <h3 class="step-title">Decide with confidence</h3>
-      <p class="step-desc">See the winner, consensus strength, and best advice. Log your choice and track outcomes.</p>
-    </div>
-  </div>
-</section>
 
-<!-- ── BENEFITS ── -->
-<section id="benefits" class="benefits">
-  <div class="benefits-container">
-    <div class="benefits-visual reveal-left">
-      <div class="glass-list">
-        <div class="glass-item">
-          <span class="glass-num">01</span>
-          <div>
-            <h4>Auto-Created Sample Decisions</h4>
-            <p>See the voting engine in action immediately on signup with a sample decision.</p>
+    <!-- Bento Item 3: Consensus Engine -->
+    <div class="bento-item reveal-up" style="--delay: 0.2s">
+      <div class="bento-glow"></div>
+      <div class="bento-content">
+        <div class="bento-icon">
+          <svg class="bento-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3 class="bento-title">Smart Consensus Badge</h3>
+        <p class="bento-desc">Smart algorithms monitor vote ratios and tag choices with "High", "Moderate", or "Split" consensus indicators.</p>
+      </div>
+    </div>
+
+    <!-- Bento Item 4: Liquid Glass UI -->
+    <div class="bento-item featured-bento reveal-up" style="--delay: 0.3s">
+      <div class="bento-glow"></div>
+      <div class="bento-content">
+        <div class="bento-icon">
+          <svg class="bento-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M11 3L8 9l4 12 4-12-3-6"/></svg>
+        </div>
+        <h3 class="bento-title">Liquid Glass UI Aesthetics</h3>
+        <p class="bento-desc">Enjoy full dark mode gradients, frosted glass backdrops, spring animation progress bars, and glowing neon contours that make the interface feel alive.</p>
+      </div>
+      <!-- Glassmorphic card overlay simulator -->
+      <div class="glass-simulator">
+        <div class="glass-sim-content">
+          <div class="sim-card-header">
+            <span class="sim-dot red"></span>
+            <span class="sim-dot yellow"></span>
+            <span class="sim-dot green"></span>
+            <span class="sim-title">App Preview</span>
+          </div>
+          <div class="sim-poll-card">
+            <div class="sim-poll-title">🎨 UI Style vs. 📐 Tech Stack</div>
+            <div class="sim-poll-bar winning">
+              <span class="sim-bar-fill" style="width: 65%;"></span>
+              <span class="sim-bar-label">🎨 Design UI (65%)</span>
+            </div>
+            <div class="sim-poll-bar">
+              <span class="sim-bar-fill" style="width: 35%;"></span>
+              <span class="sim-bar-label">📐 Tech Backend (35%)</span>
+            </div>
           </div>
         </div>
-        <div class="glass-item">
-          <span class="glass-num">02</span>
-          <div>
-            <h4>Social Image Sharing</h4>
-            <p>Export elegant decision cards to Instagram, WhatsApp, or Twitter as high-res images.</p>
-          </div>
-        </div>
-        <div class="glass-item">
-          <span class="glass-num">03</span>
-          <div>
-            <h4>Smart Offline Fallback</h4>
-            <p>Works smoothly offline. Local mode derives deterministic guest IDs to avoid overlap.</p>
-          </div>
+        <div class="glass-sim-overlay">
+          <div class="glass-sim-blur"></div>
+          <div class="glass-sim-badge">LIQUID GLASS</div>
         </div>
       </div>
     </div>
-    <div class="benefits-content reveal-right">
-      <p class="section-eyebrow">Why it works</p>
-      <h2 class="benefits-title">Designed for <br /><span class="gradient-text">Instant Clarity</span></h2>
-      <p class="benefits-description">
-        Whether debating a startup roadmap or choosing a weekend destination,
-        Decision Helper strips away group discussion fatigue and gives you clarity in minutes.
-      </p>
-      <div class="benefit-point"><span class="check">✓</span><span>No more endless message threads</span></div>
-      <div class="benefit-point"><span class="check">✓</span><span>No registration required for friends to vote</span></div>
-      <div class="benefit-point"><span class="check">✓</span><span>Spring progress bar animations with winning glow</span></div>
-      <div class="benefit-point"><span class="check">✓</span><span>100% free — no hidden subscriptions</span></div>
+
+    <!-- Bento Item 5: Pros & Cons -->
+    <div class="bento-item reveal-up" style="--delay: 0.4s">
+      <div class="bento-glow"></div>
+      <div class="bento-content">
+        <div class="bento-icon">
+          <svg class="bento-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="12" y1="3" x2="12" y2="21"/><path d="M7 6l-3 3 3 3M17 12l3 3-3 3"/></svg>
+        </div>
+        <h3 class="bento-title">Weigh Pros &amp; Cons</h3>
+        <p class="bento-desc">Collaboratively build arguments for and against options. Get actual reasoning, not just percentages.</p>
+      </div>
+    </div>
+
+    <!-- Bento Item 6: Anonymous mode -->
+    <div class="bento-item reveal-up" style="--delay: 0.5s">
+      <div class="bento-glow"></div>
+      <div class="bento-content">
+        <div class="bento-icon">
+          <svg class="bento-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3 class="bento-title">Secure Anonymous Mode</h3>
+        <p class="bento-desc">Enable stealth mode for sensitive life decisions. Friends share honest, unpressured opinions.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── NUMBERS ── -->
+<!-- ── HOW IT WORKS (THE CORE LOOP) ── -->
+<section id="howitworks" class="howitworks">
+  <div class="section-header">
+    <p class="section-eyebrow reveal-up">Decision Engine Loop</p>
+    <h2 class="section-title reveal-up">From dilemma to <span class="gradient-text">clarity in 3 steps</span></h2>
+  </div>
+  
+  <div class="steps-container">
+    <div class="step-card-wrap reveal-up">
+      <div class="step-card">
+        <div class="step-bg-glow"></div>
+        <div class="step-header">
+          <span class="step-num">01</span>
+          <span class="step-icon">
+            <svg class="step-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </span>
+        </div>
+        <h3 class="step-title">Post Your Dilemma</h3>
+        <p class="step-desc">Type your dilemma, define 2–6 choices, add a category, and optionally weigh initial pros and cons.</p>
+      </div>
+      <div class="connector-line"></div>
+    </div>
+    
+    <div class="step-card-wrap reveal-up" style="--delay: 0.15s">
+      <div class="step-card">
+        <div class="step-bg-glow"></div>
+        <div class="step-header">
+          <span class="step-num">02</span>
+          <span class="step-icon">
+            <svg class="step-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+          </span>
+        </div>
+        <h3 class="step-title">Gather Real Votes</h3>
+        <p class="step-desc">Invite friends with a link or post to the feed. Watch community votes and arguments roll in live.</p>
+      </div>
+      <div class="connector-line"></div>
+    </div>
+
+    <div class="step-card-wrap reveal-up" style="--delay: 0.3s">
+      <div class="step-card">
+        <div class="step-bg-glow"></div>
+        <div class="step-header">
+          <span class="step-num">03</span>
+          <span class="step-icon">
+            <svg class="step-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"/><path d="M12 2a5 5 0 0 1 5 5v3.5a7 7 0 0 1-10 0V7a5 5 0 0 1 5-5z"/></svg>
+          </span>
+        </div>
+        <h3 class="step-title">Decide with Confidence</h3>
+        <p class="step-desc">Review consensus strength, check top arguments, log your outcome choice, and see your stats.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BENEFITS & UNIQUE VALUES ── -->
+<section id="benefits" class="benefits">
+  <div class="benefits-container">
+    <div class="benefits-visual reveal-left">
+      <div class="visual-stack">
+        <div class="visual-item card-top">
+          <h4>Auto-Created Decisions</h4>
+          <p>Get a sample poll generated on signup to see the layout loop in action.</p>
+          <div class="visual-pill">✓ Sample ready</div>
+        </div>
+        <div class="visual-item card-mid">
+          <h4>Social Image Exporter</h4>
+          <p>Export elegant result cards to Instagram or WhatsApp in high-res automatically.</p>
+        </div>
+        <div class="visual-item card-bot">
+          <h4>Deterministic Offline IDs</h4>
+          <p>Unique offline fallback mode uses local device models to prevent ID clashes.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="benefits-content reveal-right">
+      <p class="section-eyebrow">Product Benefits</p>
+      <h2 class="benefits-title">Crafted for <br /><span class="gradient-text">Absolute Clarity</span></h2>
+      <p class="benefits-description">
+        Whether making a career change, choosing an investment strategy, or planning a weekend, Decision Helper gets you clean consensus in minutes instead of exhausting group chat arguments.
+      </p>
+      <ul class="benefits-list">
+        <li>
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>No More Endless Threads</strong>
+            <span>Aggregate opinions in clean percentages instead of cluttered messages.</span>
+          </div>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>No Registration Barrier</strong>
+            <span>Friends can vote immediately on web links without needing to download.</span>
+          </div>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>Interactive Haptic Feedback</strong>
+            <span>Physical vibration clicks confirm every selection for tactile satisfaction.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── NUMBERS SECTION ── -->
 <section class="numbers-section">
   <div class="numbers-grid">
-    <div class="number-item reveal-up" style="--delay:0s">
+    <div class="number-item reveal-up">
       <div class="number-val gradient-text" data-target="10" data-suffix="K+">0</div>
-      <div class="number-lbl">Decisions made</div>
+      <div class="number-lbl">Decisions Made</div>
     </div>
-    <div class="number-item reveal-up" style="--delay:0.1s">
+    <div class="number-item reveal-up" style="--delay: 0.1s">
       <div class="number-val gradient-text" data-target="50" data-suffix="K+">0</div>
-      <div class="number-lbl">Votes cast</div>
+      <div class="number-lbl">Votes Aggregated</div>
     </div>
-    <div class="number-item reveal-up" style="--delay:0.2s">
-      <div class="number-val gradient-text" data-target="4.8" data-suffix="★">0</div>
-      <div class="number-lbl">Average rating</div>
+    <div class="number-item reveal-up" style="--delay: 0.2s">
+      <div class="number-val gradient-text" data-target="4.9" data-suffix="★">0</div>
+      <div class="number-lbl">Rating Average</div>
     </div>
-    <div class="number-item reveal-up" style="--delay:0.3s">
+    <div class="number-item reveal-up" style="--delay: 0.3s">
       <div class="number-val gradient-text">Free</div>
-      <div class="number-lbl">Always &amp; forever</div>
+      <div class="number-lbl">Forever &amp; Always</div>
     </div>
   </div>
 </section>
 
-
-<!-- ── DOWNLOADS ── -->
+<!-- ── DOWNLOADS SECTION ── -->
 <section id="downloads" class="downloads">
   <div class="section-header">
-    <p class="section-eyebrow reveal-up">Get the app</p>
-    <h2 class="section-title reveal-up delay-1">Download <span class="gradient-text">Decision Helper</span></h2>
-    <p class="section-subtitle reveal-up delay-2">Pick the APK optimized for your device architecture.</p>
+    <p class="section-eyebrow reveal-up">Installation Directory</p>
+    <h2 class="section-title reveal-up">Select Your <span class="gradient-text">Device Architecture</span></h2>
+    <p class="section-subtitle reveal-up">Pick the optimized binary distribution below to install Decision Helper.</p>
   </div>
+  
   <div class="download-grid">
-    <div class="download-card featured reveal-up" style="--delay:0s">
+    <!-- Card 1: ARM64 (Featured) -->
+    <div class="download-card featured-download reveal-up electric-border">
       <div class="download-card-glow"></div>
       <div class="architecture-badge">ARM 64-bit</div>
-      <h3>Modern Devices</h3>
+      <h3>Modern Smartphones</h3>
       <p class="pkg-name">app-arm64-v8a-release.apk</p>
-      <p class="pkg-info">For all modern smartphones (Android 9+). Faster load times and lower battery usage.</p>
-      <div class="pkg-size">20.5 MB</div>
+      <p class="pkg-info">Recommended for modern devices (Android 9+). Delivers faster performance and battery optimization.</p>
+      <div class="pkg-size">19.9 MB</div>
       <a href="app-arm64-v8a-release.apk" class="btn btn-primary btn-download">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 15V3M12 15L8 11M12 15L16 11M3 17V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
         Download ARM64
       </a>
     </div>
-    <div class="download-card reveal-up" style="--delay:0.15s">
+
+    <!-- Card 2: ARM32 -->
+    <div class="download-card reveal-up" style="--delay: 0.15s">
       <div class="architecture-badge">ARM 32-bit</div>
-      <h3>Older Devices</h3>
+      <h3>Legacy Phones</h3>
       <p class="pkg-name">app-armeabi-v7a-release.apk</p>
-      <p class="pkg-info">For older phones and legacy architectures. Highly optimized compatibility.</p>
-      <div class="pkg-size">18.2 MB</div>
+      <p class="pkg-info">Compatible with older smartphone models and 32-bit hardware profiles.</p>
+      <div class="pkg-size">17.6 MB</div>
       <a href="app-armeabi-v7a-release.apk" class="btn btn-secondary btn-download">Download ARM32</a>
     </div>
-    <div class="download-card reveal-up" style="--delay:0.3s">
+
+    <!-- Card 3: x86_64 -->
+    <div class="download-card reveal-up" style="--delay: 0.3s">
       <div class="architecture-badge">x86_64</div>
-      <h3>Emulators / Laptops</h3>
+      <h3>Emulators &amp; PCs</h3>
       <p class="pkg-name">app-x86_64-release.apk</p>
-      <p class="pkg-info">For Android Studio emulators, Chromebooks, and virtualized Android instances.</p>
-      <div class="pkg-size">22.8 MB</div>
+      <p class="pkg-info">Optimized for Android Studio emulators, Chromebooks, and virtual environments.</p>
+      <div class="pkg-size">21.2 MB</div>
       <a href="app-x86_64-release.apk" class="btn btn-secondary btn-download">Download x86_64</a>
     </div>
   </div>
+
   <div class="download-trust reveal-up">
-    <span>✓ Free forever</span>
-    <span>✓ No account needed to vote</span>
-    <span>✓ No ads</span>
-    <span>✓ Open source</span>
+    <span>✓ Free Forever</span>
+    <span>✓ No Sign-up required to vote</span>
+    <span>✓ Zero Ads</span>
+    <span>✓ Safe Installation</span>
   </div>
 </section>
 
@@ -335,23 +488,34 @@
   <div class="footer-container">
     <div class="footer-left">
       <a href="#" class="logo-wrapper footer-logo">
-        <img src="app_logo.png" alt="logo" class="logo-img" style="width:28px;height:28px" />
-        <span class="logo-text" style="font-size:16px">Decision Helper</span>
+        <img src="app_logo.png" alt="logo" class="logo-img" style="width:30px;height:30px" />
+        <span class="logo-text" style="font-size:17px">Decision Helper</span>
       </a>
-      <p style="font-size:13px;margin-top:8px">© 2026 Decision Helper. Built for fast decisions.</p>
+      <p style="font-size:13px;margin-top:10px;max-width:320px;">
+        Designed with modern glassmorphism to help groups resolve debates, vote on dilemmas, and track decisions.
+      </p>
+      <p style="font-size:12px;margin-top:14px;color:var(--text-sec)">© 2026 Decision Helper. Your Choice. Your Future.</p>
     </div>
     <div class="footer-links">
-      <a href="#features">Features</a>
-      <a href="#howitworks">How it works</a>
-      <a href="#benefits">Benefits</a>
-      <a href="#downloads">Downloads</a>
+      <div class="link-group">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#howitworks">Process</a>
+        <a href="#demo">Live Demo</a>
+      </div>
+      <div class="link-group">
+        <h4>Downloads</h4>
+        <a href="#downloads">ARM 64-bit</a>
+        <a href="#downloads">ARM 32-bit</a>
+        <a href="#downloads">x86_64 Package</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- Back to top -->
+<!-- Floating Back to Top Button -->
 <button id="back-to-top" class="back-to-top" aria-label="Back to top">
-  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
 <script src="script.js"></script>
